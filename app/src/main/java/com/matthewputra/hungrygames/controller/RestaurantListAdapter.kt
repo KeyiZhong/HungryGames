@@ -1,4 +1,4 @@
-package com.matthewputra.hungrygames
+package com.matthewputra.hungrygames.controller
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.matthewputra.hungrygames.R
 
 class RestaurantListAdapter(private var listOfRestaurant: List<String>): RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder>() {
 
@@ -19,7 +20,11 @@ class RestaurantListAdapter(private var listOfRestaurant: List<String>): Recycle
 
     fun change(newRestaurant: List<String>) {
         //for animation when list is updated
-        val callback = RestaurantDiffCallback(listOfRestaurant, newRestaurant)
+        val callback =
+            RestaurantDiffCallback(
+                listOfRestaurant,
+                newRestaurant
+            )
         val difResult = DiffUtil.calculateDiff(callback)
         difResult.dispatchUpdatesTo(this)
         listOfRestaurant = newRestaurant

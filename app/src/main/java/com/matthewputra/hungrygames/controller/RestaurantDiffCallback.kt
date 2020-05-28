@@ -1,4 +1,4 @@
-package com.matthewputra.hungrygames
+package com.matthewputra.hungrygames.controller
 
 import androidx.recyclerview.widget.DiffUtil
 

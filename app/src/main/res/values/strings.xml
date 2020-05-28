@@ -6,4 +6,10 @@
     <string name="add_button">Add Restaurant</string>
     <string name="delete_button">DELETE</string>
     <string name="get_button">GET RESTAURANT</string>
+    <string name="username_tv">Username :</string>
+    <string name="password_tv">Password :</string>
+    <string name="username_et">username</string>
+    <string name="password_et">password</string>
+    <string name="login_b">Login</string>
+    <string name="register_b">Register</string>
 </resources>

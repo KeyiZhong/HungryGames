@@ -1,4 +1,4 @@
-package com.matthewputra.hungrygames.restaurant_info
+package com.matthewputra.hungrygames.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
