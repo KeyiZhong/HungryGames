@@ -3,7 +3,7 @@ package com.matthewputra.hungrygames.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.matthewputra.hungrygames.R
-import com.matthewputra.hungrygames.fragments.LoginFragment
+import com.matthewputra.hungrygames.fragments.AddRestaurantFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Change fragment here to be tested
-        val fragmentTest = LoginFragment()
+        val fragmentTest = AddRestaurantFragment()
 
         // Test  fragment
         supportFragmentManager
