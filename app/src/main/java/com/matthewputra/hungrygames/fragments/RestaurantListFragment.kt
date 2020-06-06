@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.matthewputra.hungrygames.R
 import com.matthewputra.hungrygames.controller.RestaurantListAdapter
+import com.matthewputra.hungrygames.model.Restaurant
 import kotlinx.android.synthetic.main.restaurant_list.*
 
 class RestaurantListFragment: Fragment() {
 
     private lateinit var restaurantListAdapter: RestaurantListAdapter
+    // TODO: Change this to type Restaurant
     private var restaurantList = listOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {

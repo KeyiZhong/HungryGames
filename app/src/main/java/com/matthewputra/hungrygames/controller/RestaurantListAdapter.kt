@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.matthewputra.hungrygames.R
 
+// TODO: Change this to type Restaurant
 class RestaurantListAdapter(private var listOfRestaurant: List<String>): RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder>() {
 
     inner class RestaurantViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

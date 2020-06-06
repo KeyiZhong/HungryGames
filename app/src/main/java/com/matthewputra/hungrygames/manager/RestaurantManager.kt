@@ -13,8 +13,11 @@ class RestaurantManager {
         //TODO:get random choice based on current list
     }
 
+    // Add given restaurant to the restaurant list
     fun addRestaurant(restaurant: Restaurant){
-        //TODO:add restaurant with weight 1 if not exist, add weight otherwise
+        val mutableRestaurant = restaurantList.toMutableList()
+        mutableRestaurant.add(restaurant)
+        restaurantList = mutableRestaurant.toList()
     }
 
 }
