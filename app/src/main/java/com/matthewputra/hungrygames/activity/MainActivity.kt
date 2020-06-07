@@ -3,7 +3,7 @@ package com.matthewputra.hungrygames.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.matthewputra.hungrygames.R
-import com.matthewputra.hungrygames.fragments.AddRestaurantFragment
+import com.matthewputra.hungrygames.fragments.LoginFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,13 +11,32 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Change fragment here to be tested
-        val fragmentTest = AddRestaurantFragment()
+        initLoginFragment()
+        addFragmentBackButton()
+    }
 
-        // Test  fragment
+    private fun initLoginFragment() {
+        val loginFragment = LoginFragment()
         supportFragmentManager
             .beginTransaction()
-            .add(R.id.flFragmentContainer, fragmentTest)
+            .add(R.id.flFragmentContainer, loginFragment, LoginFragment.TAG)
             .commit()
+    }
+
+    private fun addFragmentBackButton() {
+        supportFragmentManager.addOnBackStackChangedListener {
+            val hasBackStack = supportFragmentManager.backStackEntryCount > 0
+
+            if (hasBackStack) {
+                supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            } else {
+                supportActionBar?.setDisplayHomeAsUpEnabled(false)
+            }
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        supportFragmentManager.popBackStack()
+        return super.onNavigateUp()
     }
 }
