@@ -11,6 +11,8 @@ class RestaurantManager {
 
     fun getRandomChoice():Restaurant{
         //TODO:get random choice based on current list
+        val restaurant = Restaurant("", 1)
+        return restaurant
     }
 
     // Add given restaurant to the restaurant list

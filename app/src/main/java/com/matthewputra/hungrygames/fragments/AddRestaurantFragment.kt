@@ -38,7 +38,7 @@ class AddRestaurantFragment: Fragment() {
     private fun initAdd(context: Context) {
         // Add button click
         btnAdd.setOnClickListener {
-            val restaurant = Restaurant()
+            val restaurant = Restaurant("", 1)
             // Check whether name is null or not
             if (etAddName.text == null) {
                 Toast.makeText(context, "Please enter a restaurant name", Toast.LENGTH_SHORT).show()
