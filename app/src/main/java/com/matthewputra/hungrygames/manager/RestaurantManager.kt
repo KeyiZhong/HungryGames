@@ -12,7 +12,6 @@ class RestaurantManager {
     }
 
     fun getRandomChoice():Restaurant{
-        //TODO:get random choice based on current list
         var weightSum = 0
         for (restaurant in restaurantList) {
             weightSum += restaurant.weight
@@ -28,8 +27,24 @@ class RestaurantManager {
     }
 
     fun getChoice(): Restaurant {
-        //TODO: get choice with the highest vote
-        return restaurantList[0]
+        val chosenRestaurantList = mutableListOf<Restaurant>()
+        if (restaurantList.size != 0) {
+            chosenRestaurantList.add(restaurantList[0])
+            for (restaurant in restaurantList) {
+                if (chosenRestaurantList[0].weight < restaurant.weight) {
+                    chosenRestaurantList.clear()
+                    chosenRestaurantList.add(restaurant)
+                } else if (chosenRestaurantList[0].weight == restaurant.weight) {
+                    chosenRestaurantList.add(restaurant)
+                }
+            }
+        }
+
+        if (chosenRestaurantList.size != 0) {
+            return chosenRestaurantList[Random.nextInt(chosenRestaurantList.size)]
+        } else {
+            return Restaurant("No data", -1)
+        }
     }
 
     // Add given restaurant to the restaurant list
