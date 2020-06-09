@@ -4,7 +4,7 @@ import com.matthewputra.hungrygames.model.Restaurant
 import kotlin.random.Random
 
 class RestaurantManager {
-    private lateinit var restaurantList:List<Restaurant>
+    private var restaurantList = listOf<Restaurant>()
     // TODO: INSERT DUMMY DATA
 
     fun getList():List<Restaurant>{

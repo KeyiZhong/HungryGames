@@ -36,7 +36,7 @@ class RestaurantListFragment: Fragment() {
         arguments?.let{args ->
             restaurantList = args.getParcelableArrayList<Restaurant>(ARG_LIST)!!.toList()
         }
-        bGet.setOnClickListener {
+        /* bGet.setOnClickListener {
             val itemRestaurantInfo = ItemRestaurantInfo()
             val argumentBundle = Bundle().apply {
                 putParcelable(ItemRestaurantInfo.ARG_RESTAURANT, restaurantManager.getChoice())
@@ -49,7 +49,7 @@ class RestaurantListFragment: Fragment() {
                 fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
             }
-        }
+        }*/
     }
 
     override fun onCreateView(
@@ -63,7 +63,7 @@ class RestaurantListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        restaurantList = (context as RestaurantApp).restaurantManager.getList()
+        restaurantList = (this.activity?.applicationContext as HungryGamesApp).restaurantManager.getList()
 
         restaurantListAdapter =
             RestaurantListAdapter(
