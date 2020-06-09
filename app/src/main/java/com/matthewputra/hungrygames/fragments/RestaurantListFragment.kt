@@ -29,7 +29,7 @@ class RestaurantListFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        restaurantManager = (context as HungryGamesApp).userManager
+        restaurantManager = (context as HungryGamesApp).restaurantManager
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
