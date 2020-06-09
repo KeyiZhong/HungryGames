@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.matthewputra.hungrygames.R
-import com.matthewputra.hungrygames.activity.RestaurantApp
 import com.matthewputra.hungrygames.controller.RestaurantListAdapter
 import com.matthewputra.hungrygames.manager.RestaurantManager
 import com.matthewputra.hungrygames.model.HungryGamesApp
