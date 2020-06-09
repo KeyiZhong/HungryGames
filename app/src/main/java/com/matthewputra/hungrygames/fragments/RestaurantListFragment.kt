@@ -36,20 +36,6 @@ class RestaurantListFragment: Fragment() {
         arguments?.let{args ->
             restaurantList = args.getParcelableArrayList<Restaurant>(ARG_LIST)!!.toList()
         }
-        /* bGet.setOnClickListener {
-            val itemRestaurantInfo = ItemRestaurantInfo()
-            val argumentBundle = Bundle().apply {
-                putParcelable(ItemRestaurantInfo.ARG_RESTAURANT, restaurantManager.getChoice())
-            }
-            itemRestaurantInfo.arguments = argumentBundle
-            val fragmentTransaction = fragmentManager?.beginTransaction()
-            if (fragmentTransaction != null) {
-                fragmentTransaction.replace(R.id.flFragmentContainer, itemRestaurantInfo)
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
-            }
-        }*/
     }
 
     override fun onCreateView(
@@ -70,6 +56,21 @@ class RestaurantListFragment: Fragment() {
                 restaurantList
             )
         rvRestaurant.adapter = restaurantListAdapter
+
+        bGet.setOnClickListener {
+            val itemRestaurantInfo = ItemRestaurantInfo()
+            val argumentBundle = Bundle().apply {
+                putParcelable(ItemRestaurantInfo.ARG_RESTAURANT, restaurantManager.getChoice())
+            }
+            itemRestaurantInfo.arguments = argumentBundle
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            if (fragmentTransaction != null) {
+                fragmentTransaction.replace(R.id.flFragmentContainer, itemRestaurantInfo)
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+        }
     }
 
 }
