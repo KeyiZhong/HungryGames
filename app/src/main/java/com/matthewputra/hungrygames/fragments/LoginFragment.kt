@@ -60,7 +60,7 @@ class LoginFragment: Fragment() {
                     fragmentTransaction.commit()
                 }
             } else {
-                Toast.makeText(context, "Please enter a valid username and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this.activity?.applicationContext, "Please enter a valid username and password", Toast.LENGTH_SHORT).show()
             }
         }
     }
