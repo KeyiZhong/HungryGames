@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.matthewputra.hungrygames.R
+import com.matthewputra.hungrygames.activity.RestaurantApp
 import com.matthewputra.hungrygames.manager.UserManager
 import com.matthewputra.hungrygames.model.HungryGamesApp
 import kotlinx.android.synthetic.main.login_page.*
@@ -15,15 +17,16 @@ import kotlinx.android.synthetic.main.login_page.view.*
 
 class LoginFragment: Fragment() {
 
-    lateinit var userManager: UserManager
+    private lateinit var userManager: UserManager
 
     companion object {
         val TAG: String = LoginFragment::class.java.simpleName
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
+        userManager = (this.activity?.applicationContext as HungryGamesApp).userManager
     }
 
     override fun onCreateView(
@@ -37,7 +40,7 @@ class LoginFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnLogin.setOnClickListener{
+        btnLogin.setOnClickListener {
             val usernameText = view.findViewById<EditText>(R.id.etUsername)
             val username = usernameText.text.toString()
 
@@ -56,13 +59,9 @@ class LoginFragment: Fragment() {
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()
                 }
+            } else {
+                Toast.makeText(context, "Please enter a valid username and password", Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        userManager = (this.activity?.applicationContext as HungryGamesApp).userManager
     }
 }

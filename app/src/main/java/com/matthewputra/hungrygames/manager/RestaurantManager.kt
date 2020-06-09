@@ -54,4 +54,11 @@ class RestaurantManager {
         restaurantList = mutableRestaurant.toList()
     }
 
+    // Delete restaurant from the restaurant list
+    fun deleteRestaurant(restaurant: Restaurant) {
+        val mutableRestaurant = restaurantList.toMutableList()
+        mutableRestaurant.remove(restaurant)
+        restaurantList = mutableRestaurant.toList()
+    }
+
 }

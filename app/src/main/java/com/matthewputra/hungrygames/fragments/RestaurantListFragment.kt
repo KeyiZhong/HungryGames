@@ -11,6 +11,7 @@ import com.matthewputra.hungrygames.R
 import com.matthewputra.hungrygames.activity.RestaurantApp
 import com.matthewputra.hungrygames.controller.RestaurantListAdapter
 import com.matthewputra.hungrygames.manager.RestaurantManager
+import com.matthewputra.hungrygames.model.HungryGamesApp
 import com.matthewputra.hungrygames.model.Restaurant
 import kotlinx.android.synthetic.main.restaurant_list.*
 
@@ -21,14 +22,14 @@ class RestaurantListFragment: Fragment() {
     lateinit var restaurantManager: RestaurantManager
 
     companion object {
-        val TAG: String = RestaurantListFragment::class.java.simpleName
+        val TAG = RestaurantListFragment::class.java.simpleName
 
         const val ARG_LIST = "arg_list"
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        restaurantManager = (context.applicationContext as RestaurantApp).restaurantManager
+        restaurantManager = (context as HungryGamesApp).userManager
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
