@@ -1,12 +1,13 @@
 package com.matthewputra.hungrygames.controller
 
 import androidx.recyclerview.widget.DiffUtil
+import com.matthewputra.hungrygames.model.Restaurant
 
-// TODO: Change this to type Restaurant
 class RestaurantDiffCallback(
-    private val oldRestaurant: List<String>,
-    private val newRestaurant: List<String>
+    private val oldRestaurant: List<Restaurant>,
+    private val newRestaurant: List<Restaurant>
 ): DiffUtil.Callback() {
+
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val oldRestaurant = this.oldRestaurant[oldItemPosition]
         val newRestaurant = this.newRestaurant[newItemPosition]

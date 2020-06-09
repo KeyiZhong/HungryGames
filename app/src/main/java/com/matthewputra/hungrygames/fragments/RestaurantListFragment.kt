@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.matthewputra.hungrygames.R
+import com.matthewputra.hungrygames.activity.RestaurantApp
 import com.matthewputra.hungrygames.controller.RestaurantListAdapter
 import com.matthewputra.hungrygames.model.Restaurant
 import kotlinx.android.synthetic.main.restaurant_list.*
@@ -13,17 +14,10 @@ import kotlinx.android.synthetic.main.restaurant_list.*
 class RestaurantListFragment: Fragment() {
 
     private lateinit var restaurantListAdapter: RestaurantListAdapter
-    // TODO: Change this to type Restaurant
-    private var restaurantList = listOf<String>()
+    private lateinit var restaurantList: List<Restaurant>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Dummy data
-        restaurantList = listOf("Thai Tom", "KFC", "Red Pepper", "Husky Den", "McDonald", "Bugis",
-            "The Alley", "Tasty Pot", "Korean Tofu House", "Chi Mac", "Din Tai Fung", "U:Don", "Capsule Cafe",
-            "Bok a Bok", "Alladin", "HUB", "Thai Tom", "KFC", "Red Pepper", "Husky Den", "McDonald", "Bugis",
-            "The Alley", "Tasty Pot", "Korean Tofu House", "Chi Mac", "Din Tai Fung", "U:Don", "Capsule Cafe",
-            "Bok a Bok", "Alladin", "HUB")
     }
 
     override fun onCreateView(
@@ -36,6 +30,8 @@ class RestaurantListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        restaurantList = (context as RestaurantApp).restaurantManager.getList()
 
         restaurantListAdapter =
             RestaurantListAdapter(

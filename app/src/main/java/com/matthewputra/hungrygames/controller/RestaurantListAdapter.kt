@@ -7,19 +7,19 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.matthewputra.hungrygames.R
+import com.matthewputra.hungrygames.model.Restaurant
 
-// TODO: Change this to type Restaurant
-class RestaurantListAdapter(private var listOfRestaurant: List<String>): RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder>() {
+class RestaurantListAdapter(private var listOfRestaurant: List<Restaurant>): RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder>() {
 
     inner class RestaurantViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val tvRestaurantName by lazy { itemView.findViewById<TextView>(R.id.tvRestaurantName) }
 
-        fun bind(restaurant: String) {
-            tvRestaurantName.text = restaurant
+        fun bind(restaurant: Restaurant) {
+            tvRestaurantName.text = restaurant.name
         }
     }
 
-    fun change(newRestaurant: List<String>) {
+    fun change(newRestaurant: List<Restaurant>) {
         //for animation when list is updated
         val callback =
             RestaurantDiffCallback(
