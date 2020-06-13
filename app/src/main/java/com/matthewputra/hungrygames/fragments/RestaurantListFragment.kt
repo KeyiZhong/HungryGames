@@ -19,6 +19,7 @@ class RestaurantListFragment: Fragment() {
     private lateinit var restaurantListAdapter: RestaurantListAdapter
     private lateinit var restaurantList: List<Restaurant>
     lateinit var restaurantManager: RestaurantManager
+    private lateinit var onRestaurantClickListener: OnRestaurantClickListener
 
     companion object {
         val TAG = RestaurantListFragment::class.java.simpleName
@@ -28,6 +29,11 @@ class RestaurantListFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+
+        if (context is OnRestaurantClickListener) {
+            onRestaurantClickListener = context
+        }
+
         restaurantManager = (this.activity?.applicationContext as HungryGamesApp).restaurantManager
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,6 +62,11 @@ class RestaurantListFragment: Fragment() {
             )
         rvRestaurant.adapter = restaurantListAdapter
 
+        restaurantListAdapter.onRestaurantClickListener = { restaurant ->
+            onRestaurantClickListener.onRestaurantClicked(restaurant)
+        }
+
+
         bGet.setOnClickListener {
             val itemRestaurantInfo = ItemRestaurantInfo()
             val argumentBundle = Bundle().apply {
@@ -64,11 +75,15 @@ class RestaurantListFragment: Fragment() {
             itemRestaurantInfo.arguments = argumentBundle
             val fragmentTransaction = fragmentManager?.beginTransaction()
             if (fragmentTransaction != null) {
-                fragmentTransaction.replace(R.id.flFragmentContainer, itemRestaurantInfo)
+                fragmentTransaction.replace(R.id.flFragmentContainer, itemRestaurantInfo, ItemRestaurantInfo.TAG)
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
             }
         }
     }
+}
+
+interface OnRestaurantClickListener {
+    fun onRestaurantClicked(restaurant: Restaurant)
 }

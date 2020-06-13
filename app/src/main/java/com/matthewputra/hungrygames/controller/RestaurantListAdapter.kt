@@ -11,11 +11,17 @@ import com.matthewputra.hungrygames.model.Restaurant
 
 class RestaurantListAdapter(private var listOfRestaurant: List<Restaurant>): RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder>() {
 
+    var onRestaurantClickListener: ((restaurant: Restaurant) -> Unit)? = null
+
     inner class RestaurantViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val tvRestaurantName by lazy { itemView.findViewById<TextView>(R.id.tvRestaurantName) }
 
         fun bind(restaurant: Restaurant) {
             tvRestaurantName.text = restaurant.name
+
+//            itemView.setOnClickListener {
+//                onRestaurantClickListener?.invoke(restaurant)
+//            }
         }
     }
 

@@ -43,7 +43,4 @@
         app:layout_constraintRight_toLeftOf="@id/bDelete"
         app:layout_constraintTop_toTopOf="@id/bAdd"/>
 
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

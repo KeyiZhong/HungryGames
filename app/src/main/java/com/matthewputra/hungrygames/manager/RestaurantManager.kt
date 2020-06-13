@@ -4,8 +4,26 @@ import com.matthewputra.hungrygames.model.Restaurant
 import kotlin.random.Random
 
 class RestaurantManager {
-    private var restaurantList = listOf<Restaurant>()
-    // TODO: INSERT DUMMY DATA
+
+    // DUMMY DATA
+    private var restaurantList = listOf(
+        Restaurant("Red Pepper", 1),
+        Restaurant("Thai Tom", 2),
+        Restaurant("Mc Donald", 3),
+        Restaurant("KFC", 4),
+        Restaurant("Taco Bell", 5),
+        Restaurant("Wendy's", 6),
+        Restaurant("Sushi Place", 7),
+        Restaurant("Jack in the Box", 8),
+        Restaurant("Just Burger", 9),
+        Restaurant("Kusushi", 10),
+        Restaurant("Tereyaki 1st", 11),
+        Restaurant("Morsel", 12),
+        Restaurant("Arepa", 13),
+        Restaurant("Aladdins", 14),
+        Restaurant("Chipotle", 15),
+        Restaurant("Motosurf", 16)
+    )
 
     fun getList():List<Restaurant>{
         return restaurantList
