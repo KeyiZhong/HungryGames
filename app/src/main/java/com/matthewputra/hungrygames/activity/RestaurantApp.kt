@@ -18,6 +18,5 @@ class RestaurantApp: Application() {
         apiManager = ApiManager(this)
         restaurantManager = RestaurantManager()
         userManager = UserManager()
-
     }
 }

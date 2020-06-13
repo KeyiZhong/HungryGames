@@ -9,11 +9,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.matthewputra.hungrygames.R
-import com.matthewputra.hungrygames.activity.RestaurantApp
 import com.matthewputra.hungrygames.manager.UserManager
 import com.matthewputra.hungrygames.model.HungryGamesApp
 import kotlinx.android.synthetic.main.login_page.*
-import kotlinx.android.synthetic.main.login_page.view.*
 
 class LoginFragment: Fragment() {
 
@@ -54,7 +52,7 @@ class LoginFragment: Fragment() {
                 val helloUserFragment = HelloUserFragment()
                 val fragmentTransaction = fragmentManager?.beginTransaction()
                 if (fragmentTransaction != null) {
-                    fragmentTransaction.replace(R.id.flFragmentContainer, helloUserFragment)
+                    fragmentTransaction.replace(R.id.flFragmentContainer, helloUserFragment, HelloUserFragment.TAG)
                     fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()

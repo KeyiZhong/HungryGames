@@ -2,14 +2,8 @@ package com.matthewputra.hungrygames.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import com.matthewputra.hungrygames.R
-import com.matthewputra.hungrygames.fragments.HelloUserFragment
 import com.matthewputra.hungrygames.fragments.LoginFragment
-import com.matthewputra.hungrygames.model.HungryGamesApp
-import kotlinx.android.synthetic.main.hello_username.*
-import kotlinx.android.synthetic.main.login_page.*
 
 class MainActivity : AppCompatActivity() {
 

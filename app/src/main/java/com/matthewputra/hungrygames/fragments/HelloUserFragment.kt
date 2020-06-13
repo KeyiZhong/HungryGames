@@ -6,12 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import com.matthewputra.hungrygames.R
 import com.matthewputra.hungrygames.model.HungryGamesApp
 import kotlinx.android.synthetic.main.hello_username.*
-
 
 class HelloUserFragment: Fragment() {
 
@@ -40,8 +37,8 @@ class HelloUserFragment: Fragment() {
 
         initButtonParty()
 
-        // Change the username
-        tvUsername.text = restaurantApp.userManager.getUsername()
+        // Set a welcome message
+        tvUsername.text = getString(R.string.welcome_user).format(restaurantApp.userManager.getUsername())
     }
 
     private fun initButtonParty() {
@@ -50,7 +47,7 @@ class HelloUserFragment: Fragment() {
             activity?.supportFragmentManager?.let{ fragManager ->
                 fragManager
                     .beginTransaction()
-                    .add(R.id.flFragmentContainer, restaurantListFragment)
+                    .add(R.id.flFragmentContainer, restaurantListFragment, RestaurantListFragment.TAG)
                     .addToBackStack(null)
                     .commit()
             }

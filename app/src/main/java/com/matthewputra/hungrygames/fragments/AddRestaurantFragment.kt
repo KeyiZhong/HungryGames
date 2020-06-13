@@ -1,6 +1,5 @@
 package com.matthewputra.hungrygames.fragments
 
-import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -41,5 +41,4 @@ class RestaurantListAdapter(private var listOfRestaurant: List<Restaurant>): Rec
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
         holder.bind(listOfRestaurant[position])
     }
-
 }

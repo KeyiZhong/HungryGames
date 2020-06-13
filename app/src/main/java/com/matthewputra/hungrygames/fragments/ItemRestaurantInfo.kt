@@ -14,6 +14,7 @@ class ItemRestaurantInfo: Fragment() {
 
         const val ARG_RESTAURANT = "arg_restaurant"
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
