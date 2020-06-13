@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/small_padding_size"
     android:background="#FFF"
+    android:clickable="true"
     android:foreground="?selectableItemBackground">
 
     <TextView

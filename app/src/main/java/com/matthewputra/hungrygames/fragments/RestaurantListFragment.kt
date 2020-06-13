@@ -12,6 +12,7 @@ import com.matthewputra.hungrygames.controller.RestaurantListAdapter
 import com.matthewputra.hungrygames.manager.RestaurantManager
 import com.matthewputra.hungrygames.model.HungryGamesApp
 import com.matthewputra.hungrygames.model.Restaurant
+import kotlinx.android.synthetic.main.item_restaurant.*
 import kotlinx.android.synthetic.main.restaurant_list.*
 
 class RestaurantListFragment: Fragment() {
@@ -70,7 +71,7 @@ class RestaurantListFragment: Fragment() {
         bGet.setOnClickListener {
             val itemRestaurantInfo = ItemRestaurantInfo()
             val argumentBundle = Bundle().apply {
-                putParcelable(ItemRestaurantInfo.ARG_RESTAURANT, restaurantManager.getChoice())
+                putParcelable(ItemRestaurantInfo.CHOSEN_RESTAURANT, restaurantManager.getChoice())
             }
             itemRestaurantInfo.arguments = argumentBundle
             val fragmentTransaction = fragmentManager?.beginTransaction()

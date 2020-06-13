@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.matthewputra.hungrygames.R
 import com.matthewputra.hungrygames.activity.RestaurantApp
+import com.matthewputra.hungrygames.model.HungryGamesApp
 import com.matthewputra.hungrygames.model.Restaurant
 import kotlinx.android.synthetic.main.add_restaurant.*
 
@@ -32,7 +33,6 @@ class AddRestaurantFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         context?.let {
             initAdd(it)
         }
@@ -53,7 +53,16 @@ class AddRestaurantFragment: Fragment() {
                 } else {
                     restaurant.weight = etAddWeight.text.toString().toInt()
                 }
-                (context as RestaurantApp).restaurantManager.addRestaurant(restaurant)
+                (this.activity?.applicationContext as HungryGamesApp).restaurantManager.addRestaurant(restaurant)
+                // Go to restaurant list fragment
+                val restaurantListFragment = RestaurantListFragment()
+                activity?.supportFragmentManager?.let{ fragManager ->
+                    fragManager
+                        .beginTransaction()
+                        .add(R.id.flFragmentContainer, restaurantListFragment, RestaurantListFragment.TAG)
+                        .addToBackStack(null)
+                        .commit()
+                }
             }
         }
     }
