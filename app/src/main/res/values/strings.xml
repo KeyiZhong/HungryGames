@@ -2,7 +2,7 @@
     <string name="app_name">HungryGames</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_button">Add Restaurant</string>
-    <string name="delete_button">DELETE</string>
+    <string name="invite_button">Invite</string>
     <string name="get_button">GET RESTAURANT</string>
     <string name="username_tv">Username :</string>
     <string name="password_tv">Password :</string>

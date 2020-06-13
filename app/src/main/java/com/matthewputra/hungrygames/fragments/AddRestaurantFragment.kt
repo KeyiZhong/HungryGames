@@ -14,6 +14,10 @@ import kotlinx.android.synthetic.main.add_restaurant.*
 
 class AddRestaurantFragment: Fragment() {
 
+    companion object {
+        val TAG = AddRestaurantFragment::class.java.simpleName
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

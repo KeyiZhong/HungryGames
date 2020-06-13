@@ -7,5 +7,5 @@ import kotlinx.android.parcel.Parcelize
 data class Restaurant(
     var name:String,
     var weight:Int
-//need to add yelp api informarion
+    // need to add yelp api information
 ):Parcelable

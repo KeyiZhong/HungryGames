@@ -81,6 +81,17 @@ class RestaurantListFragment: Fragment() {
                 fragmentTransaction.commit()
             }
         }
+
+        bAdd.setOnClickListener {
+            val addRestaurantFragment = AddRestaurantFragment()
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            if (fragmentTransaction != null) {
+                fragmentTransaction.replace(R.id.flFragmentContainer, addRestaurantFragment, AddRestaurantFragment.TAG)
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+        }
     }
 }
 
