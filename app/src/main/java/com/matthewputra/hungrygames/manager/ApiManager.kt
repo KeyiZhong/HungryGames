@@ -2,6 +2,7 @@ package com.matthewputra.hungrygames.manager
 
 import android.content.Context
 import android.util.Log
+import com.matthewputra.hungrygames.model.YelpSearchResults
 import com.matthewputra.hungrygames.model.YelpService
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,13 +30,13 @@ class ApiManager(context: Context) {
         yelpService = retrofit.create(YelpService::class.java)
     }
 
-    fun searchRestaurants() {
-        yelpService.searchRestaurants("Bearer $API_KEY","Avocado Toast", "New York").enqueue(object: Callback<Any> {
-            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+    fun searchRestaurants(searchTerm: String, location: String) {
+        yelpService.searchRestaurants("Bearer $API_KEY","$searchTerm", "$location").enqueue(object: Callback<YelpSearchResults> {
+            override fun onResponse(call: Call<YelpSearchResults>, response: Response<YelpSearchResults>) {
                 Log.i("aluu", "$response")
             }
 
-            override fun onFailure(call: Call<Any>, t: Throwable) {
+            override fun onFailure(call: Call<YelpSearchResults>, t: Throwable) {
                 Log.i("aluu", "$t") //To change body of created functions use File | Settings | File Templates.
             }
         })

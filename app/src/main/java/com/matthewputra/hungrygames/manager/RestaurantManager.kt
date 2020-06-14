@@ -9,7 +9,7 @@ class RestaurantManager {
     private var restaurantList = listOf(
         Restaurant("Red Pepper", 1),
         Restaurant("Thai Tom", 2),
-        Restaurant("Mc Donald", 3),
+        Restaurant("McDonalds", 3),
         Restaurant("KFC", 4),
         Restaurant("Taco Bell", 5),
         Restaurant("Wendy's", 6),

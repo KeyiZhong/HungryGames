@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.matthewputra.hungrygames.R
 import com.matthewputra.hungrygames.fragments.LoginFragment
+import com.matthewputra.hungrygames.model.HungryGamesApp
 
 class MainActivity : AppCompatActivity() {
 
